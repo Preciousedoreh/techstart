@@ -2,8 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import RoutingEngineVisual from "@/components/visuals/RoutingEngineVisual";
-import Avatar from "@/components/visuals/Avatar";
 
 export const metadata: Metadata = {
   title: "Nexus Freight Case Study | Radan Tech",
@@ -45,8 +43,15 @@ export default function NexusFreightPage() {
               </p>
             </div>
             <div className="flex-1 w-full relative h-[400px] rounded-xl overflow-hidden border border-white/10">
-              <div className="absolute inset-0 opacity-70">
-                <RoutingEngineVisual />
+              <div className="absolute inset-0 bg-[#241611] p-8">
+                <div className="relative h-full border border-primary-fixed/70">
+                  <span className="absolute left-[12%] top-[22%] h-3 w-3 rounded-full bg-primary-container" />
+                  <span className="absolute left-[40%] top-[44%] h-3 w-3 rounded-full bg-primary-container" />
+                  <span className="absolute right-[15%] top-[20%] h-3 w-3 rounded-full bg-primary-container" />
+                  <span className="absolute bottom-[18%] right-[30%] h-3 w-3 rounded-full bg-primary-container" />
+                  <i className="absolute left-[13%] top-[24%] h-px w-[42%] origin-left rotate-[23deg] bg-primary-container" />
+                  <i className="absolute left-[41%] top-[46%] h-px w-[38%] origin-left -rotate-[30deg] bg-primary-container" />
+                </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent"></div>
             </div>
@@ -140,8 +145,8 @@ export default function NexusFreightPage() {
               bottlenecks before our drivers even encounter them.&quot;
             </blockquote>
             <div className="flex items-center gap-md">
-              <div className="w-12 h-12 rounded-full bg-surface-bright overflow-hidden border border-white/10 relative">
-                <Avatar name="Sarah Jenkins" className="w-full h-full" />
+              <div className="w-12 h-12 rounded-full bg-primary-container text-[#2b160b] flex items-center justify-center font-display-lg font-bold border border-white/10">
+                SJ
               </div>
               <div>
                 <div className="font-label-md text-label-md text-on-surface">Sarah Jenkins</div>

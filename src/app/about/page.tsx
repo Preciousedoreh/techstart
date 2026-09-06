@@ -2,8 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ServerRoomVisual from "@/components/visuals/ServerRoomVisual";
-import Avatar from "@/components/visuals/Avatar";
 
 export const metadata: Metadata = {
   title: "About - Radan Tech",
@@ -130,8 +128,12 @@ export default function AboutPage() {
           </div>
           <div className="relative w-full h-[500px] rounded-2xl overflow-hidden glass-panel flex items-center justify-center p-xs group">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-            <div className="absolute inset-0 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-              <ServerRoomVisual />
+            <div className="absolute inset-0 rounded-xl overflow-hidden bg-[#241611] p-8">
+              <div className="grid h-full grid-cols-4 gap-3 opacity-90">
+                {Array.from({ length: 12 }).map((_, index) => (
+                  <span key={index} className={index % 5 === 0 ? "border border-primary-container bg-primary-container" : "border border-white/30 bg-white/10"} />
+                ))}
+              </div>
             </div>
             <div className="absolute bottom-md left-md right-md z-20 flex justify-between items-end border-t border-primary/20 pt-sm">
               <span className="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-widest">
@@ -217,8 +219,8 @@ export default function AboutPage() {
                 key={member.name}
                 className="group relative overflow-hidden rounded-xl bg-surface-container border border-white/5 p-sm flex flex-col gap-sm hover:border-primary/30 transition-colors"
               >
-                <div className="aspect-square rounded-lg overflow-hidden relative">
-                  <Avatar name={member.name} className="w-full h-full" />
+                <div className="aspect-square rounded-lg bg-primary-container text-[#2b160b] flex items-center justify-center font-display-lg text-4xl font-bold tracking-[-.08em]">
+                  {member.name.split(" ").map((part) => part[0]).join("")}
                 </div>
                 <div>
                   <div className="font-headline-sm text-headline-sm text-on-background text-[18px]">

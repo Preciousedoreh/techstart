@@ -1,67 +1,61 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const footerGroups = [
+  {
+    title: "Services",
+    links: [
+      ["Software engineering", "/#services"],
+      ["Intelligent automation", "/#services"],
+      ["Product strategy", "/#process"],
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      ["Case studies", "/work"],
+      ["About us", "/about"],
+      ["Contact", "/contact"],
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-xl border-t border-white/10">
-      <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-md">
-        <div className="flex flex-col gap-sm col-span-1 md:col-span-1">
-          <Link href="/" className="flex items-center gap-xs">
-            <span className="material-symbols-outlined text-primary text-headline-sm">bolt</span>
-            <span className="font-display-lg text-headline-sm font-bold text-primary">
-              Radan Tech
-            </span>
-          </Link>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-sm">
-            © 2026 Radan Tech. Built for high-performance automation.
-          </p>
+    <footer className="bg-[#241611] px-margin-mobile pb-8 pt-16 text-white md:px-margin-desktop">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="grid gap-12 border-b border-white/15 pb-14 md:grid-cols-[1.5fr_1fr_1fr]">
+          <div>
+            <Link href="/" className="flex items-center gap-3" aria-label="Radan Tech home">
+              <Image src="/logo-mark.png" alt="" width={276} height={256} className="h-12 w-auto" />
+              <span className="font-display-lg text-3xl font-bold tracking-[-0.06em]">
+                radan<span className="text-primary-fixed">tech</span>
+              </span>
+            </Link>
+            <p className="mt-5 max-w-sm text-base leading-7 text-slate-300">
+              Product-minded engineers building the systems ambitious companies grow on.
+            </p>
+          </div>
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <p className="font-label-sm text-label-sm uppercase tracking-[0.16em] text-primary-fixed">
+                {group.title}
+              </p>
+              <ul className="mt-5 space-y-3">
+                {group.links.map(([label, href]) => (
+                  <li key={label}>
+                    <Link className="text-sm text-slate-300 transition-colors hover:text-primary-fixed" href={href}>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="col-span-1 md:col-span-3 flex justify-end gap-xl">
-          <div className="flex flex-col gap-sm">
-            <span className="font-label-md text-label-md text-on-surface mb-xs tracking-widest uppercase">
-              Platform
-            </span>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/#services"
-            >
-              Services
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/work"
-            >
-              Case Studies
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/#process"
-            >
-              Process
-            </Link>
-          </div>
-          <div className="flex flex-col gap-sm">
-            <span className="font-label-md text-label-md text-on-surface mb-xs tracking-widest uppercase">
-              Company
-            </span>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/about"
-            >
-              About
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/contact"
-            >
-              Contact
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary-container dark:hover:text-primary-container transition-all hover:translate-x-1 duration-200"
-              href="/privacy"
-            >
-              Privacy Policy
-            </Link>
-          </div>
+        <div className="flex flex-col justify-between gap-4 pt-6 text-xs text-slate-400 sm:flex-row">
+          <span>© 2026 Radan Tech. All rights reserved.</span>
+          <Link href="/privacy" className="hover:text-white">Privacy policy</Link>
         </div>
       </div>
     </footer>

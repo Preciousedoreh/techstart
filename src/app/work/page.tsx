@@ -2,9 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import RoutingEngineVisual from "@/components/visuals/RoutingEngineVisual";
-import DataFlowVisual from "@/components/visuals/DataFlowVisual";
-import VisionScanVisual from "@/components/visuals/VisionScanVisual";
 
 export const metadata: Metadata = {
   title: "Work/Projects - Radan Tech",
@@ -46,7 +43,7 @@ export default function WorkPage() {
             className="card-gradient rounded-xl border border-white/10 overflow-hidden hover-lift flex flex-col group"
           >
             <div className="h-48 md:h-56 relative overflow-hidden bg-surface-lowest transition-transform duration-700 group-hover:scale-105">
-              <RoutingEngineVisual />
+              <div className="h-full bg-[#241611] p-6"><div className="grid h-full grid-cols-3 gap-2 border border-primary-fixed/60 p-4"><span className="bg-primary-container" /><span className="bg-white/20" /><span className="bg-white/20" /></div></div>
               <div className="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded font-label-sm text-label-sm text-primary border border-primary/20">
                 Automation
               </div>
@@ -75,7 +72,7 @@ export default function WorkPage() {
 
           <article className="card-gradient rounded-xl border border-white/10 overflow-hidden hover-lift flex flex-col group">
             <div className="h-48 md:h-56 relative overflow-hidden bg-surface-lowest transition-transform duration-700 group-hover:scale-105">
-              <DataFlowVisual />
+              <div className="h-full bg-primary-container p-6"><div className="flex h-full items-end gap-2 border border-[#2b160b]/50 p-4"><span className="h-1/4 flex-1 bg-[#241611]" /><span className="h-1/2 flex-1 bg-[#241611]" /><span className="h-3/4 flex-1 bg-[#241611]" /><span className="h-full flex-1 bg-[#241611]" /></div></div>
               <div className="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded font-label-sm text-label-sm text-primary border border-primary/20">
                 Custom Apps
               </div>
@@ -102,7 +99,7 @@ export default function WorkPage() {
 
           <article className="card-gradient rounded-xl border border-white/10 overflow-hidden hover-lift flex flex-col group">
             <div className="h-48 md:h-56 relative overflow-hidden bg-surface-lowest transition-transform duration-700 group-hover:scale-105">
-              <VisionScanVisual />
+              <div className="h-full bg-[#f1f3ee] p-6"><div className="grid h-full place-items-center border border-[#241611]/50"><span className="grid h-32 w-32 place-items-center rounded-full border-[18px] border-primary-container text-2xl text-[#241611]">+</span></div></div>
               <div className="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded font-label-sm text-label-sm text-primary border border-primary/20">
                 AI/ML
               </div>

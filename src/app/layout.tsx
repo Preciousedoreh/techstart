@@ -14,10 +14,20 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+const description =
+  "We engineer precision software systems and custom automation pipelines that eliminate operational friction and accelerate enterprise growth.";
+
+// Favicon, apple touch icon and social card come from icon.png, apple-icon.png
+// and opengraph-image.png in this directory via Next's file conventions.
 export const metadata: Metadata = {
   title: "Radan Tech - Intelligent Automation",
-  description:
-    "We engineer precision software systems and custom automation pipelines that eliminate operational friction and accelerate enterprise growth.",
+  description,
+  openGraph: {
+    title: "Radan Tech - Intelligent Automation",
+    description,
+    siteName: "Radan Tech",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${geist.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

@@ -1,273 +1,184 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroVisual from "@/components/visuals/HeroVisual";
-import RoutingEngineVisual from "@/components/visuals/RoutingEngineVisual";
-import FinAgentVisual from "@/components/visuals/FinAgentVisual";
+
+const SERVICES = [
+  {
+    number: "01",
+    title: "Custom software engineering",
+    copy: "From the first technical decision to production, we build durable web platforms, internal tools, and customer-facing products.",
+  },
+  {
+    number: "02",
+    title: "Intelligent automation",
+    copy: "We turn slow, manual operations into dependable automated workflows powered by connected data and practical AI.",
+  },
+  {
+    number: "03",
+    title: "Systems modernization",
+    copy: "Move beyond brittle legacy systems with an incremental plan that protects business continuity and unlocks speed.",
+  },
+  {
+    number: "04",
+    title: "Product discovery & delivery",
+    copy: "Clarify what to build, validate the opportunity, and bring focused product teams together around a measurable outcome.",
+  },
+];
+
+const BENEFITS = [
+  ["Business-first teams", "Senior product, design, and engineering perspectives in one room from day one."],
+  ["Momentum without the chaos", "A clear delivery cadence means you can see what is moving and what comes next."],
+  ["Built to evolve", "We design for the next phase of your business, not only the next launch date."],
+];
 
 export default function HomePage() {
   return (
     <>
       <Header active="home" />
-      <main className="pt-32 pb-xl">
-        {/* Hero Section */}
-        <section className="max-w-[1440px] mx-auto px-margin-desktop py-xl lg:py-[120px] grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-          <div className="flex flex-col gap-lg z-10">
-            <div className="inline-flex items-center gap-xs px-sm py-xs border border-white/10 rounded-full w-max bg-surface-container/50 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
-                High-Performance Engineering
-              </span>
-            </div>
-            <h1 className="font-display-lg text-display-lg text-on-surface">
-              Architecting <br />
-              <span className="text-primary drop-shadow-[0_0_10px_rgba(0,229,255,0.2)]">
-                Intelligent Automation
-              </span>
-            </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              We engineer precision software systems and custom automation pipelines that
-              eliminate operational friction and accelerate enterprise growth.
-            </p>
-            <div className="flex items-center gap-md pt-sm">
-              <Link
-                className="bg-primary-container text-on-primary-fixed font-label-md text-label-md px-lg py-md rounded-DEFAULT hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] active:scale-95 transition-all flex items-center gap-xs"
-                href="/contact"
-              >
-                Book a Strategy Call
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
-              </Link>
-              <Link
-                className="border border-white/20 text-on-surface font-label-md text-label-md px-lg py-md rounded-DEFAULT hover:border-primary hover:text-primary transition-colors bg-surface-container/30 backdrop-blur-sm flex items-center gap-xs"
-                href="/work"
-              >
-                Explore Our Work
-              </Link>
-            </div>
-          </div>
-          <div className="relative h-[500px] w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,229,255,0.05)]">
-            <HeroVisual />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="max-w-[1440px] mx-auto px-margin-desktop py-xl">
-          <div className="mb-lg">
-            <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">
-              Core Capabilities
-            </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-              Specialized technical solutions designed for scalability, security, and raw
-              performance.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <div className="bg-surface-container rounded-[24px] p-lg border border-white/5 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden bg-gradient-to-b from-surface-container to-surface-container-low">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
-              <span className="material-symbols-outlined text-[40px] text-primary mb-md block">
-                settings_input_component
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">
-                Custom Application Development
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-md">
-                Full-stack engineering of robust, secure, and highly scalable applications
-                tailored specifically to your complex business logic and architectural
-                requirements.
+      <main className="overflow-hidden pt-[76px]">
+        <section className="border-b border-slate-900/10 bg-background">
+          <div className="mx-auto grid min-h-[660px] max-w-[1440px] lg:grid-cols-[1.05fr_.95fr]">
+            <div className="flex flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop lg:py-24">
+              <p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary">
+                Technology that moves business forward
               </p>
-              <Link
-                className="inline-flex items-center gap-xs font-label-md text-label-md text-primary hover:text-primary-container transition-colors mt-auto"
-                href="/work"
-              >
-                View Architecture Specs{" "}
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </Link>
-            </div>
-            <div className="bg-surface-container rounded-[24px] p-lg border border-white/5 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden bg-gradient-to-b from-surface-container to-surface-container-low">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
-              <span className="material-symbols-outlined text-[40px] text-primary mb-md block">
-                bolt
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">
-                Intelligent Automation
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-md">
-                Designing and deploying sophisticated autonomous agents and data pipelines that
-                eliminate manual workflows, reducing overhead and exponentially increasing
-                operational velocity.
+              <h1 className="mt-7 max-w-3xl font-display-lg text-[clamp(3rem,6vw,6.25rem)] font-bold leading-[0.96] tracking-[-0.065em] text-[#241611]">
+                Build what&apos;s next.
+                <span className="block text-primary">Run it better.</span>
+              </h1>
+              <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 md:text-xl">
+                Radan Tech partners with ambitious teams to create software, automate complex work,
+                and make technology a real advantage.
               </p>
-              <Link
-                className="inline-flex items-center gap-xs font-label-md text-label-md text-primary hover:text-primary-container transition-colors mt-auto"
-                href="/work"
-              >
-                Explore Automation Frameworks{" "}
-                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </Link>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link className="bg-[#241611] px-6 py-4 font-label-md text-label-md text-white transition-colors hover:bg-primary-container" href="/contact">
+                  Start a conversation <span aria-hidden="true">↗</span>
+                </Link>
+                <Link className="border border-slate-900/20 px-6 py-4 font-label-md text-label-md text-[#241611] transition-colors hover:border-[#241611]" href="/work">
+                  See our work
+                </Link>
+              </div>
+            </div>
+            <div className="relative min-h-[430px] overflow-hidden bg-[#241611] p-7 lg:min-h-0 md:p-10">
+              <div className="absolute -right-20 -top-20 h-[380px] w-[380px] rounded-full border-[44px] border-primary-container" />
+              <div className="absolute left-[14%] top-[20%] h-[40%] w-[58%] border border-white/35" />
+              <div className="absolute left-[22%] top-[30%] h-[40%] w-[58%] border border-primary-fixed" />
+              <div className="absolute bottom-[23%] left-0 right-0 h-px bg-white/20" />
+              <div className="absolute bottom-[23%] left-[22%] h-px w-[58%] bg-primary-container" />
+              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between text-white">
+                <div>
+                  <p className="font-label-sm text-label-sm uppercase tracking-[0.15em] text-primary-fixed">Radan Tech / 2026</p>
+                  <p className="mt-3 max-w-[230px] text-sm leading-6 text-orange-100">Systems designed for the pace of change.</p>
+                </div>
+                <span className="font-display-lg text-6xl tracking-[-.1em] text-primary-fixed">↗</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Featured Projects Section */}
-        <section className="max-w-[1440px] mx-auto px-margin-desktop py-xl">
-          <div className="flex justify-between items-end mb-lg">
+        <section id="services" className="mx-auto max-w-[1440px] px-margin-mobile py-20 md:px-margin-desktop md:py-28">
+          <div className="grid gap-8 border-b border-slate-900/15 pb-10 lg:grid-cols-[.8fr_1.2fr] lg:pb-14">
+            <p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary">What we do</p>
             <div>
-              <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">
-                Featured Engineering
+              <h2 className="max-w-3xl font-display-lg text-4xl font-bold leading-[1.02] tracking-[-0.055em] text-[#241611] md:text-6xl">
+                The right technology, deliberately applied.
               </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                Production-ready systems driving real-world impact.
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                We connect strategy, design, and engineering to solve the operational problems that hold growing businesses back.
               </p>
             </div>
-            <Link
-              className="hidden md:flex border border-white/20 text-on-surface font-label-md text-label-md px-md py-sm rounded-DEFAULT hover:border-primary hover:text-primary transition-colors"
-              href="/work"
-            >
-              View All Case Studies
-            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <Link className="group cursor-pointer block" href="/nexus-freight">
-              <div className="relative h-[360px] w-full rounded-2xl overflow-hidden border border-white/10 mb-md transition-transform duration-700 group-hover:scale-105">
-                <RoutingEngineVisual />
-                <div className="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
-              </div>
-              <div className="flex items-start justify-between">
-                <div>
-                  <span className="font-label-sm text-label-sm text-primary mb-xs block">
-                    Logistics / API Integration
-                  </span>
-                  <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                    Nexus Freight Routing Engine
-                  </h3>
+          <div className="grid md:grid-cols-2">
+            {SERVICES.map((service, index) => (
+              <article key={service.number} className={`group border-b border-slate-900/15 py-8 md:p-10 ${index % 2 === 0 ? "md:border-r" : ""}`}>
+                <div className="flex items-start justify-between gap-6">
+                  <span className="font-label-sm text-label-sm text-primary">{service.number}</span>
+                  <span className="text-2xl text-[#241611] transition-transform group-hover:translate-x-1">↗</span>
                 </div>
-                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  north_east
-                </span>
-              </div>
-            </Link>
-            <div className="group cursor-pointer">
-              <div className="relative h-[360px] w-full rounded-2xl overflow-hidden border border-white/10 mb-md transition-transform duration-700 group-hover:scale-105">
-                <FinAgentVisual />
-                <div className="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
-              </div>
-              <div className="flex items-start justify-between">
-                <div>
-                  <span className="font-label-sm text-label-sm text-primary mb-xs block">
-                    FinTech / Machine Learning
-                  </span>
-                  <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                    Finparse AI Agent
-                  </h3>
-                </div>
-                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  north_east
-                </span>
-              </div>
-            </div>
+                <h3 className="mt-16 max-w-md font-display-lg text-3xl font-bold leading-tight tracking-[-.045em] text-[#241611]">
+                  {service.title}
+                </h3>
+                <p className="mt-4 max-w-md leading-7 text-slate-600">{service.copy}</p>
+                <Link href="/contact" className="mt-8 inline-block font-label-md text-label-md text-[#241611] underline decoration-primary decoration-2 underline-offset-4">
+                  Discuss this service
+                </Link>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* Process Section */}
-        <section
-          id="process"
-          className="max-w-[1440px] mx-auto px-margin-desktop py-xl border-y border-white/5 bg-surface-container-lowest relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-          <div className="relative z-10">
-            <div className="text-center mb-xl">
-              <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">
-                The Radan Tech Process
+        <section className="bg-[#ecf0e7] px-margin-mobile py-20 md:px-margin-desktop md:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
+            <div>
+              <p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary">Why Radan Tech</p>
+              <h2 className="mt-6 font-display-lg text-4xl font-bold leading-[1.03] tracking-[-.055em] text-[#241611] md:text-5xl">
+                A partner who stays close to the outcome.
               </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
-                A rigorous, deterministic methodology for delivering enterprise-grade software
-                systems.
-              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-md relative">
-              <div className="hidden md:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0"></div>
-              <div className="hidden md:block absolute top-[40px] left-[10%] w-[25%] h-[1px] bg-primary shadow-[0_0_10px_rgba(0,229,255,0.8)] z-0"></div>
-              {[
-                {
-                  n: "01",
-                  title: "Discovery",
-                  desc: "Deep architectural analysis and requirement mapping.",
-                  activeStep: true,
-                },
-                {
-                  n: "02",
-                  title: "Architecture",
-                  desc: "System design, technology stack selection, and API blueprinting.",
-                },
-                {
-                  n: "03",
-                  title: "Development",
-                  desc: "Iterative engineering with strict testing protocols.",
-                },
-                {
-                  n: "04",
-                  title: "Deployment",
-                  desc: "Seamless CI/CD rollout and post-launch telemetry monitoring.",
-                },
-              ].map((step) => (
-                <div
-                  key={step.n}
-                  className="relative z-10 flex flex-col items-center text-center group"
-                >
-                  <div
-                    className={
-                      step.activeStep
-                        ? "w-[80px] h-[80px] rounded-full bg-surface-container border border-primary/30 flex items-center justify-center mb-md shadow-[0_0_20px_rgba(0,229,255,0.1)] group-hover:border-primary transition-colors"
-                        : "w-[80px] h-[80px] rounded-full bg-surface-container border border-white/10 flex items-center justify-center mb-md group-hover:border-primary/50 transition-colors"
-                    }
-                  >
-                    <span
-                      className={
-                        step.activeStep
-                          ? "font-label-md text-label-md text-primary"
-                          : "font-label-md text-label-md text-on-surface-variant"
-                      }
-                    >
-                      {step.n}
-                    </span>
+            <div className="divide-y divide-slate-900/15 border-t border-slate-900/15">
+              {BENEFITS.map(([title, copy], index) => (
+                <div className="grid gap-4 py-8 md:grid-cols-[70px_1fr]" key={title}>
+                  <span className="font-label-sm text-label-sm text-primary">0{index + 1}</span>
+                  <div>
+                    <h3 className="font-display-lg text-2xl font-bold tracking-[-.04em] text-[#241611]">{title}</h3>
+                    <p className="mt-3 max-w-xl leading-7 text-slate-600">{copy}</p>
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-on-surface mb-xs text-lg">
-                    {step.title}
-                  </h4>
-                  <p className="font-body-md text-body-md text-on-surface-variant text-sm px-sm">
-                    {step.desc}
-                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="max-w-[1440px] mx-auto px-margin-desktop py-xl lg:py-[100px]">
-          <div className="bg-surface-container rounded-[32px] p-xl text-center relative overflow-hidden border border-primary/20 shadow-[0_0_50px_rgba(0,229,255,0.03)]">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="font-display-lg text-display-lg text-on-surface mb-md">
-                Ready to Upgrade Your Infrastructure?
-              </h2>
-              <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-                Schedule a technical consultation to discuss your specific engineering challenges
-                and how Radan Tech can architect your solution.
-              </p>
-              <Link
-                className="bg-primary-container text-on-primary-fixed font-label-md text-label-md px-xl py-lg rounded-DEFAULT hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] active:scale-95 transition-all text-lg font-bold inline-block text-center"
-                href="/contact"
-              >
-                Initiate Project Consultation
-              </Link>
+        <section className="mx-auto max-w-[1440px] px-margin-mobile py-20 md:px-margin-desktop md:py-28">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary">Selected work</p>
+              <h2 className="mt-5 font-display-lg text-4xl font-bold tracking-[-.055em] text-[#241611] md:text-5xl">Technology in the real world.</h2>
             </div>
+            <Link href="/work" className="font-label-md text-label-md text-[#241611] underline decoration-primary decoration-2 underline-offset-4">View all case studies</Link>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <Link href="/nexus-freight" className="group block">
+              <div className="relative h-[360px] overflow-hidden bg-[#241611] p-7 text-white md:p-9">
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary-container" />
+                <div className="relative flex h-full flex-col justify-between border border-white/40 p-5">
+                  <span className="font-label-sm text-label-sm uppercase tracking-[0.16em] text-primary-fixed">Routing intelligence</span>
+                  <div className="grid grid-cols-3 gap-2"><span className="h-20 bg-primary-container" /><span className="h-20 bg-white/20" /><span className="h-20 bg-white/20" /></div>
+                </div>
+              </div>
+              <p className="mt-5 font-label-sm text-label-sm uppercase tracking-[0.14em] text-primary">Logistics / automation</p>
+              <div className="mt-2 flex items-start justify-between gap-4"><h3 className="font-display-lg text-3xl font-bold tracking-[-.045em] text-[#241611]">Nexus Freight Routing Engine</h3><span className="text-2xl">↗</span></div>
+            </Link>
+            <div className="group">
+              <div className="relative h-[360px] overflow-hidden bg-[#ee5a11] p-7 text-white md:p-9">
+                <div className="absolute -bottom-24 -left-12 h-64 w-64 rounded-full border-[34px] border-white/50" />
+                <div className="relative flex h-full flex-col justify-between border border-white/55 p-5">
+                  <span className="font-label-sm text-label-sm uppercase tracking-[0.16em] text-white">Automation agent</span>
+                  <div className="ml-auto grid w-3/4 grid-cols-4 gap-2"><span className="h-20 bg-[#241611]" /><span className="h-20 bg-white/25" /><span className="h-20 bg-white/25" /><span className="h-20 bg-white/25" /></div>
+                </div>
+              </div>
+              <p className="mt-5 font-label-sm text-label-sm uppercase tracking-[0.14em] text-primary">Fintech / AI</p>
+              <div className="mt-2 flex items-start justify-between gap-4"><h3 className="font-display-lg text-3xl font-bold tracking-[-.045em] text-[#241611]">Finparse AI Agent</h3><span className="text-2xl">↗</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="bg-[#241611] px-margin-mobile py-20 text-white md:px-margin-desktop md:py-28">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="grid gap-8 border-b border-white/20 pb-12 lg:grid-cols-[.8fr_1.2fr]">
+              <p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary-fixed">How we work</p>
+              <div><h2 className="max-w-3xl font-display-lg text-4xl font-bold leading-[1.02] tracking-[-.055em] md:text-6xl">A clear path from problem to progress.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">No black box. Just the right people, shared context, and an accountable delivery plan.</p></div>
+            </div>
+            <div className="grid md:grid-cols-4">
+              {["Understand", "Shape", "Build", "Improve"].map((step, index) => <div key={step} className="border-b border-white/20 py-8 md:border-b-0 md:border-r md:px-7 md:last:border-r-0"><span className="font-label-sm text-label-sm text-primary-fixed">0{index + 1}</span><h3 className="mt-16 font-display-lg text-2xl font-bold tracking-[-.04em]">{step}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{["Get to the root of the business need and technical reality.", "Turn the opportunity into a focused roadmap and delivery plan.", "Ship in purposeful increments with quality built into the work.", "Learn from what is live and keep creating more value."][index]}</p></div>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-primary-container px-margin-mobile py-20 md:px-margin-desktop md:py-28">
+          <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+            <div><p className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-[#8d3100]">Let&apos;s make progress</p><h2 className="mt-6 max-w-3xl font-display-lg text-5xl font-bold leading-[.98] tracking-[-.06em] text-[#2b160b] md:text-7xl">What could your technology make possible?</h2></div>
+            <Link href="/contact" className="shrink-0 bg-[#241611] px-7 py-5 font-label-md text-label-md text-white transition-transform hover:-translate-y-1">Talk to our team <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
       </main>
